@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamVerse - Next Generation Streaming</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loader-container">
+      <div class="loader">
+        <div class="loader-blob"></div>
+        <div class="loader-text">StreamVerse</div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <svg class="logo-svg" viewBox="0 0 100 40">
+            <defs>
+              <linearGradient
+                id="logoGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" style="stop-color: #ff6b6b" />
+                <stop offset="50%" style="stop-color: #4ecdc4" />
+                <stop offset="100%" style="stop-color: #45b7d1" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M10 10 L30 10 L30 30 L10 30 Z"
+              fill="url(#logoGradient)"
+              rx="5"
+            />
+            <circle cx="50" cy="20" r="8" fill="url(#logoGradient)" />
+            <path d="M70 10 L90 20 L70 30 Z" fill="url(#logoGradient)" />
+          </svg>
+          <span class="logo-text">StreamVerse</span>
+        </div>
+
+        <div class="nav-menu">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">Movies</a>
+          <a href="#" class="nav-link">Series</a>
+          <a href="#" class="nav-link">Originals</a>
+          <a href="#" class="nav-link">Sports</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search..." />
+            <svg class="search-icon" viewBox="0 0 24 24">
+              <path
+                d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19S2 15.194 2 10.5 5.806 2 10.5 2 19 5.806 19 10.5Z"
+              />
+            </svg>
+          </div>
+          <div class="profile-container">
+            <img
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=40&h=40&fit=crop&crop=face"
+              alt="Profile"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-video-background">
+        <!-- Background Video -->
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+          <source src="hero-bg-video.mp4" type="video/mp4" />
+          <!-- Fallback for browsers that don't support video -->
+          <div class="video-fallback"></div>
+        </video>
+
+        <!-- Video Overlay for better text readability -->
+        <div class="video-overlay"></div>
+
+        <!-- Animated Blobs (now over video) -->
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+        <div class="hero-blob blob-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <span>🎬 New Release</span>
+          </div>
+          <h1 class="hero-title">The Quantum Paradox</h1>
+          <p class="hero-description">
+            A mind-bending sci-fi thriller that explores the boundaries of
+            reality and consciousness. When a quantum physicist discovers a way
+            to manipulate time, the consequences threaten the fabric of
+            existence itself.
+          </p>
+          <div class="hero-meta">
+            <span class="rating">★ 9.2</span>
+            <span class="year">2024</span>
+            <span class="duration">2h 18m</span>
+            <span class="genre">Sci-Fi • Thriller</span>
+            <span class="quality">4K Ultra HD</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-primary hero-play-btn">
+              <svg viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              Watch Now
+            </button>
+            <button class="btn btn-secondary">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              Add to Watchlist
+            </button>
+            <button class="btn btn-tertiary">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              More Info
+            </button>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <img src="quantum.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- Video Controls -->
+      <div class="video-controls">
+        <button class="video-control-btn mute-btn" title="Mute/Unmute">
+          <svg class="sound-on" viewBox="0 0 24 24">
+            <path
+              d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+            />
+          </svg>
+          <svg class="sound-off" viewBox="0 0 24 24" style="display: none">
+            <path
+              d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"
+            />
+          </svg>
+        </button>
+        <button class="video-control-btn pause-btn" title="Pause/Play">
+          <svg class="pause-icon" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+          <svg class="play-icon" viewBox="0 0 24 24" style="display: none">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="main-content">
+      <!-- Trending Section -->
+      <section class="content-section">
+        <div class="section-header">
+          <h2 class="section-title">Trending Now</h2>
+          <div class="section-nav">
+            <button class="nav-arrow nav-prev">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <button class="nav-arrow nav-next">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="content-slider" id="trending-slider">
+          <div class="content-card featured">
+            <div class="card-image">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1710961232986-36cead00da3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW92aWVzfGVufDB8fDB8fHww"
+                alt="Movie"
+              />
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Neon Dreams</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.7</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=600&fit=crop"
+                alt="Movie"
+              />
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Mystic Forest</h3>
+              <div class="card-meta">
+                <span class="rating">★ 9.1</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1512113569142-8a60fccc7caa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Movie"
+              />
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Urban Legends</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.4</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1539481915544-f5cd50562d66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Movie"
+              />
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Ocean's Mystery</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.9</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1716029941735-72de6d615aff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Movie"
+              />
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Desert Storm</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.6</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Continue Watching -->
+      <section class="content-section">
+        <div class="section-header">
+          <h2 class="section-title">Continue Watching</h2>
+        </div>
+        <div class="content-slider continue-watching">
+          <div class="content-card continue-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=225&fit=crop"
+                alt="Series"
+              />
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+              </div>
+              <div class="episode-info">
+                <span>S2 E5</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Quantum Realm</h3>
+              <p class="card-subtitle">The Discovery</p>
+            </div>
+          </div>
+
+          <div class="content-card continue-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400&h=225&fit=crop"
+                alt="Series"
+              />
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 32%"></div>
+              </div>
+              <div class="episode-info">
+                <span>S1 E3</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Digital Shadows</h3>
+              <p class="card-subtitle">The Hack</p>
+            </div>
+          </div>
+
+          <div class="content-card continue-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1600660792241-240f01455c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1vdmllc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Movie"
+              />
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 78%"></div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Stellar Journey</h3>
+              <p class="card-subtitle">Movie</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Originals Section -->
+      <section class="content-section">
+        <div class="section-header">
+          <h2 class="section-title">StreamVerse Originals</h2>
+          <div class="section-nav">
+            <button class="nav-arrow nav-prev">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <button class="nav-arrow nav-next">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="content-slider originals-slider">
+          <div class="content-card original-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1701275998609-119e2c09f443?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW92aWVzJTIwcG9zdGVyc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="Original"
+              />
+              <div class="original-badge">Original</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">The Last Protocol</h3>
+              <div class="card-meta">
+                <span class="rating">★ 9.3</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card original-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=600&fit=crop"
+                alt="Original"
+              />
+              <div class="original-badge">Original</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Echoes of Tomorrow</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.8</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card original-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1651971102254-1fcf6745b7b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG1vdmllcyUyMHBvc3RlcnN8ZW58MHx8MHx8fDA%3D"
+                alt="Original"
+              />
+              <div class="original-badge">Original</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Midnight Chronicles</h3>
+              <div class="card-meta">
+                <span class="rating">★ 9.0</span>
+                <span class="year">2024</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+            <!-- New Releases Section -->
+      <section class="content-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">✨</span>
+            New Releases
+          </h2>
+          <div class="section-nav">
+            <button class="nav-arrow nav-prev">
+              <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <button class="nav-arrow nav-next">
+              <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="content-slider new-releases-slider">
+          <div class="content-card release-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop" alt="Avatar: The Way of Water">
+              <div class="new-badge">New</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Avatar: The Way of Water</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.7</span>
+                <span class="duration">3h 12m</span>
+                <span class="quality">4K</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card release-card">
+            <div class="card-image">
+              <img src="quantum.jpg" alt="The Batman">
+              <div class="new-badge">New</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">The Batman</h3>
+              <div class="card-meta">
+                <span class="rating">★ 8.9</span>
+                <span class="duration">2h 56m</span>
+                <span class="quality">4K</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card release-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Top Gun: Maverick">
+              <div class="new-badge">New</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Top Gun: Maverick</h3>
+              <div class="card-meta">
+                <span class="rating">★ 9.1</span>
+                <span class="duration">2h 11m</span>
+                <span class="quality">4K</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card release-card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=600&fit=crop" alt="Everything Everywhere">
+              <div class="new-badge">New</div>
+              <div class="card-overlay">
+                <div class="card-actions">
+                  <button class="action-btn play-btn">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <button class="action-btn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Everything Everywhere All at Once</h3>
+              <div class="card-meta">
+                <span class="rating">★ 9.3</span>
+                <span class="duration">2h 19m</span>
+                <span class="quality">4K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Genres Section -->
+      <section class="content-section genres-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">🎭</span>
+            Browse by Genre
+          </h2>
+        </div>
+        <div class="genres-grid">
+          <div class="genre-card" data-genre="action">
+            <div class="genre-background">
+              <img src="paradox.jpg" alt="Action">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Action</h3>
+              <p class="genre-count">1,247 titles</p>
+              <div class="genre-icon">💥</div>
+            </div>
+          </div>
+
+          <div class="genre-card" data-genre="sci-fi">
+            <div class="genre-background">
+              <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=300&fit=crop" alt="Sci-Fi">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Sci-Fi</h3>
+              <p class="genre-count">892 titles</p>
+              <div class="genre-icon">🚀</div>
+            </div>
+          </div>
+
+          <div class="genre-card" data-genre="drama">
+            <div class="genre-background">
+              <img src="https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=400&h=300&fit=crop" alt="Drama">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Drama</h3>
+              <p class="genre-count">2,156 titles</p>
+              <div class="genre-icon">🎭</div>
+            </div>
+          </div>
+
+          <div class="genre-card" data-genre="comedy">
+            <div class="genre-background">
+              <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=300&fit=crop" alt="Comedy">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Comedy</h3>
+              <p class="genre-count">1,543 titles</p>
+              <div class="genre-icon">😂</div>
+            </div>
+          </div>
+
+          <div class="genre-card" data-genre="horror">
+            <div class="genre-background">
+              <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=300&fit=crop" alt="Horror">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Horror</h3>
+              <p class="genre-count">678 titles</p>
+              <div class="genre-icon">👻</div>
+            </div>
+          </div>
+
+          <div class="genre-card" data-genre="documentary">
+            <div class="genre-background">
+              <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop" alt="Documentary">
+            </div>
+            <div class="genre-overlay">
+              <h3 class="genre-title">Documentary</h3>
+              <p class="genre-count">934 titles</p>
+              <div class="genre-icon">📽️</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section">
+        <div class="features-container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span class="title-icon">⚡</span>
+              Why Choose StreamVerse?
+            </h2>
+            <p class="section-subtitle">Experience the future of streaming with cutting-edge technology</p>
+          </div>
+          
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">4K Ultra HD</h3>
+              <p class="feature-description">Crystal clear picture quality with HDR support for the ultimate viewing experience</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">No Ads</h3>
+              <p class="feature-description">Enjoy uninterrupted streaming with zero advertisements across all content</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Download & Watch</h3>
+              <p class="feature-description">Download your favorite shows and movies to watch offline anywhere, anytime</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Global Access</h3>
+              <p class="feature-description">Stream from anywhere in the world with our global content delivery network</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M15 6H3v2h12V6zm0 4H3v2h12v-2zM3 16h8v-2H3v2zM17 6v8.18c-.31-.11-.65-.18-1-.18-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3V8h3V6h-5z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Smart Recommendations</h3>
+              <p class="feature-description">AI-powered suggestions based on your viewing history and preferences</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Multiple Profiles</h3>
+              <p class="feature-description">Create up to 5 personalized profiles for different family members</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscription Plans Section -->
+      <section class="subscription-section">
+        <div class="subscription-container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span class="title-icon">💎</span>
+              Choose Your Plan
+            </h2>
+            <p class="section-subtitle">Flexible plans designed for every viewer</p>
+          </div>
+          
+          <div class="plans-grid">
+            <div class="plan-card basic">
+              <div class="plan-header">
+                <h3 class="plan-name">Basic</h3>
+                <div class="plan-price">
+                  <span class="currency">$</span>
+                  <span class="amount">8.99</span>
+                  <span class="period">/month</span>
+                </div>
+              </div>
+              <div class="plan-features">
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>HD Quality (720p)</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>1 Device</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Limited Downloads</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Basic Support</span>
+                </div>
+              </div>
+              <button class="plan-btn">Get Started</button>
+            </div>
+
+            <div class="plan-card standard popular">
+              <div class="popular-badge">Most Popular</div>
+              <div class="plan-header">
+                <h3 class="plan-name">Standard</h3>
+                <div class="plan-price">
+                  <span class="currency">$</span>
+                  <span class="amount">13.99</span>
+                  <span class="period">/month</span>
+                </div>
+              </div>
+              <div class="plan-features">
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Full HD Quality (1080p)</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>2 Devices</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Unlimited Downloads</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Priority Support</span>
+                </div>
+              </div>
+              <button class="plan-btn">Get Started</button>
+            </div>
+
+            <div class="plan-card premium">
+              <div class="plan-header">
+                <h3 class="plan-name">Premium</h3>
+                <div class="plan-price">
+                  <span class="currency">$</span>
+                  <span class="amount">17.99</span>
+                  <span class="period">/month</span>
+                </div>
+              </div>
+              <div class="plan-features">
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>4K Ultra HD + HDR</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>4 Devices</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Unlimited Downloads</span>
+                </div>
+                <div class="feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>24/7 Premium Support</span>
+                </div>
+              </div>
+              <button class="plan-btn">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <svg class="logo-svg" viewBox="0 0 100 40">
+                <defs>
+                  <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color: #ff6b6b" />
+                    <stop offset="50%" style="stop-color: #4ecdc4" />
+                    <stop offset="100%" style="stop-color: #45b7d1" />
+                  </linearGradient>
+                </defs>
+                <path d="M10 10 L30 10 L30 30 L10 30 Z" fill="url(#footerLogoGradient)" rx="5" />
+                <circle cx="50" cy="20" r="8" fill="url(#footerLogoGradient)" />
+                <path d="M70 10 L90 20 L70 30 Z" fill="url(#footerLogoGradient)" />
+              </svg>
+              <span class="footer-logo-text">StreamVerse</span>
+            </div>
+            <p class="footer-description">
+              The next generation streaming platform delivering premium entertainment 
+              with cutting-edge technology and unparalleled user experience.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-title">Company</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">About Us</a></li>
+                <li><a href="#" class="footer-link">Careers</a></li>
+                <li><a href="#" class="footer-link">Press</a></li>
+                <li><a href="#" class="footer-link">Blog</a></li>
+                <li><a href="#" class="footer-link">Investor Relations</a></li>
+              </ul
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-title">Support</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">Help Center</a></li>
+                <li><a href="#" class="footer-link">Contact Us</a></li>
+                <li><a href="#" class="footer-link">Account</a></li>
+                <li><a href="#" class="footer-link">Redeem Gift Cards</a></li>
+                <li><a href="#" class="footer-link">System Requirements</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-title">Legal</h4>
+              <ul class="footer-list">
+                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                <li><a href="#" class="footer-link">Terms of Service</a></li>
+                <li><a href="#" class="footer-link">Cookie Policy</a></li>
+                <li><a href="#" class="footer-link">Content Guidelines</a></li>
+                <li><a href="#" class="footer-link">Accessibility</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-column">
+              <h4 class="footer-title">Download Apps</h4>
+              <div class="app-downloads">
+                <a href="#" class="app-link">
+                  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" class="app-badge">
+                </a>
+                <a href="#" class="app-link">
+                  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="app-badge">
+                </a>
+              </div>
+              <div class="device-compatibility">
+                <h5>Available on:</h5>
+                <div class="device-icons">
+                  <div class="device-icon" title="Smart TV">📺</div>
+                  <div class="device-icon" title="Mobile">📱</div>
+                  <div class="device-icon" title="Tablet">📱</div>
+                  <div class="device-icon" title="Desktop">💻</div>
+                  <div class="device-icon" title="Gaming Console">🎮</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="footer-info">
+              <p class="copyright">© 2024 StreamVerse. All rights reserved.</p>
+              <div class="footer-meta">
+                <span class="footer-location">🌍 Available in 190+ countries</span>
+                <span class="footer-languages">
+                  <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                    <option value="pt">Português</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            
+            <div class="footer-certifications">
+              <div class="certification-badge">
+                <span class="cert-text">4K</span>
+              </div>
+              <div class="certification-badge">
+                <span class="cert-text">HDR</span>
+              </div>
+              <div class="certification-badge">
+                <span class="cert-text">DOLBY</span>
+              </div>
+              <div class="certification-badge">
+                <span class="cert-text">5.1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14l5-5 5 5z"/>
+      </svg>
+    </button>
+
+    <!-- Newsletter Modal -->
+    <div class="modal-overlay" id="newsletterModal">
+      <div class="modal-content newsletter-modal">
+        <button class="modal-close" aria-label="Close modal">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+        <div class="newsletter-content">
+          <h3>Stay Updated</h3>
+          <p>Get the latest news about new releases, exclusive content, and special offers.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    </main>
+
+    <div class="bg-decorations">
+      <div class="floating-blob blob-bg-1"></div>
+      <div class="floating-blob blob-bg-2"></div>
+      <div class="floating-blob blob-bg-3"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
